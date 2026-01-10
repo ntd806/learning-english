@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spelling Practice Pro</title>
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ===== MENU ===== */
+.menu {
+  display: flex;
+  background: #111827;
+  border-bottom: 1px solid #1f2937;
+}
+
+.menu a {
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 14px 22px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.menu a:hover {
+  background: #1f2937;
+}
+
+.menu a.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* ===== PAGE LAYOUT ===== */
+body {
+  min-height: 100vh;
+}
+
+.main {
+  max-width: 520px;
+  margin: 40px auto;
+  background: white;
+  padding: 28px 30px 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== TITLE ===== */
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ===== FORM ELEMENTS ===== */
+input[type="file"] {
+  font-size: 14px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+select,
+input[type="text"],
+input#userInput {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* ===== BUTTONS ===== */
+button {
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ===== ACTION ROW ===== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* ===== TIMER ===== */
+#timer {
+  font-weight: 600;
+  color: #ef4444;
+}
+
+/* ===== RESULT ===== */
+#result {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ===== STATS ===== */
+#stats {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* ===== MARKMAP (KEEP IF USED) ===== */
+#mindmap {
+  width: 100vw;
+  height: calc(100vh - 48px);
+}
+
+.markmap-dark {
+  background: #18181b;
+  color: white;
+}
+</style>
+
+</head>
+<body>
+<div class="menu">
+  <a href="./framework.html" class="active">Framework</a>
+  <a href="./constract.html">Constract</a>
+  <a href="./markmap.html">Markmap</a>
+  <a href="./markmap.html">Spelling</a>
+</div>
+
+<div class="main">
+<h2>Spelling Practice Pro</h2>
+
+<input type="file" id="fileInput" accept=".txt"><br><br>
+
+<label>Voice:</label>
+<select id="voiceSelect"></select><br><br>
+<div class="actions">
+<button onclick="speak()">🔊 Listen</button>
+<span id="timer"></span><br><br>
+<div class="actions">
+
+<input id="userInput" placeholder="Type what you hear">
+<button onclick="check()">Check</button>
+
+<div id="result"></div>
+<div id="stats"></div>
+</div>
+<script>
+let list = [];
+let queue = [];
+let current = "";
+let timer;
+let timeLeft = 8;
+
+let correct = 0;
+let wrong = 0;
+
+const input = document.getElementById("userInput");
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") check();
+});
+
+/* ---------- LOAD FILE ---------- */
+document.getElementById("fileInput").addEventListener("change", e => {
+  const reader = new FileReader();
+  reader.onload = () => {
+    list = reader.result
+      .split("\n")
+      .map(x => x.trim())
+      .filter(x => x);
+    queue = [...list];
+    pick();
+  };
+  reader.readAsText(e.target.files[0]);
+});
+
+/* ---------- RANDOM PICK ---------- */
+function pick() {
+  if (queue.length === 0) {
+    alert("Finished!");
+    return;
+  }
+  current = queue[Math.floor(Math.random() * queue.length)];
+  input.value = "";
+  document.getElementById("result").innerText = "";
+  startTimer();
+  speak();
+}
+
+/* ---------- TIMER ---------- */
+function startTimer() {
+  clearInterval(timer);
+  timeLeft = 8;
+  document.getElementById("timer").innerText = ` ⏱ ${timeLeft}s`;
+  timer = setInterval(() => {
+    timeLeft--;
+    document.getElementById("timer").innerText = ` ⏱ ${timeLeft}s`;
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      markWrong();
+    }
+  }, 1000);
+}
+
+/* ---------- CHECK ---------- */
+function check() {
+  clearInterval(timer);
+  const user = input.value.trim().toLowerCase();
+  if (user === current.toLowerCase()) {
+    correct++;
+    document.getElementById("result").innerText = "✅ Correct";
+  } else {
+    markWrong();
+    return;
+  }
+  updateStats();
+  setTimeout(pick, 1200);
+}
+
+/* ---------- WRONG HANDLING ---------- */
+function markWrong() {
+  wrong++;
+  queue.push(current); // repeat wrong word
+  saveWrongWord(current);
+  document.getElementById("result").innerText =
+    "❌ Wrong → " + current;
+  updateStats();
+  setTimeout(pick, 1500);
+}
+
+/* ---------- STATS ---------- */
+function updateStats() {
+  document.getElementById("stats").innerText =
+    `Correct: ${correct} | Wrong: ${wrong}`;
+}
+
+/* ---------- SAVE WRONG WORD ---------- */
+function saveWrongWord(word) {
+  let saved = JSON.parse(localStorage.getItem("wrongWords") || "[]");
+  if (!saved.includes(word)) {
+    saved.push(word);
+    localStorage.setItem("wrongWords", JSON.stringify(saved));
+  }
+}
+
+/* ---------- VOICE ---------- */
+let voices = [];
+speechSynthesis.onvoiceschanged = () => {
+  voices = speechSynthesis.getVoices()
+    .filter(v => v.lang.startsWith("en"));
+  const select = document.getElementById("voiceSelect");
+  voices.forEach((v, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.text = `${v.lang} - ${v.name}`;
+    select.add(opt);
+  });
+};
+
+function speak() {
+  if (!current) return;
+  const u = new SpeechSynthesisUtterance(current);
+  const v = voices[document.getElementById("voiceSelect").value];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+</script>
+
+</body>
+</html>

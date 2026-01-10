@@ -1,0 +1,5 @@
+nitrogen
+oxygen
+foliage
+nutritional
+calories

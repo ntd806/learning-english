@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.menu {
+  background: #1f2937;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1000;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  transition: background-color 0.2s;
+  font-weight: 500;
+  border-right: 1px solid #374151;
+}
+.menu a:hover {
+  background: #374151;
+}
+.menu a.active {
+  background: #3b82f6;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: calc(100vh - 45px);
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<div class="menu">
+  <a href="./framework.html" class="active">Framework</a>
+  <a href="./constract.html">Constract</a>
+  <a href="./markmap.html">Markmap</a>
+  <a href="./markmap.html">Spelling</a>
+</div>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"C&#x1ea4;P &#x110;&#x1ed8; 1","children":[{"content":"&#x2705; Advantages","children":[{"content":"1. play a vital role in","children":[{"content":"V-ing","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"Noun","children":[],"payload":{"tag":"li","lines":"6,9"}}],"payload":{"tag":"h3","lines":"4,5"}},{"content":"2. pave the way for","children":[{"content":"Noun","children":[],"payload":{"tag":"li","lines":"10,13"}}],"payload":{"tag":"h3","lines":"9,10"}},{"content":"3. provide individuals with the opportunity to","children":[{"content":"Verb","children":[],"payload":{"tag":"li","lines":"14,16"}}],"payload":{"tag":"h3","lines":"13,14"}}],"payload":{"tag":"h2","lines":"3,4"}},{"content":"&#x274c; Disadvantages","children":[{"content":"4. wreak havoc on","children":[{"content":"Noun","children":[],"payload":{"tag":"li","lines":"18,20"}}],"payload":{"tag":"h3","lines":"17,18"}},{"content":"5. take a massive toll on","children":[{"content":"Noun","children":[],"payload":{"tag":"li","lines":"21,23"}}],"payload":{"tag":"h3","lines":"20,21"}},{"content":"6. pose a serious threat to","children":[{"content":"Noun","children":[],"payload":{"tag":"li","lines":"24,26"}}],"payload":{"tag":"h3","lines":"23,24"}}],"payload":{"tag":"h2","lines":"16,17"}},{"content":"&#x1f9e0; Memory Tips","children":[{"content":"group 1","children":[{"content":"role","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"way","children":[],"payload":{"tag":"li","lines":"29,30"}},{"content":"opportunity","children":[],"payload":{"tag":"li","lines":"30,32"}}],"payload":{"tag":"h3","lines":"27,28"}},{"content":"group 2","children":[{"content":"havoc","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"toll","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"threat","children":[],"payload":{"tag":"li","lines":"35,36"}}],"payload":{"tag":"h3","lines":"32,33"}}],"payload":{"tag":"h2","lines":"26,27"}}],"payload":{"tag":"h1","lines":"0,1"}},null)</script>
+<script src="./script.js"></script>
+</body>
+</html>
