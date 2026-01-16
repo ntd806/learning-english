@@ -183,6 +183,7 @@ button:active {
 <div id="result"></div>
 <div id="stats"></div>
 </div>
+
 <script>
 let list = [];
 let queue = [];
@@ -206,19 +207,26 @@ document.getElementById("fileInput").addEventListener("change", e => {
       .split("\n")
       .map(x => x.trim())
       .filter(x => x);
+
     queue = [...list];
+    correct = 0;
+    wrong = 0;
+    updateStats();
     pick();
   };
   reader.readAsText(e.target.files[0]);
 });
 
-/* ---------- RANDOM PICK ---------- */
+/* ---------- PICK WORD (FIXED) ---------- */
 function pick() {
   if (queue.length === 0) {
     alert("Finished!");
     return;
   }
-  current = queue[Math.floor(Math.random() * queue.length)];
+
+  const index = Math.floor(Math.random() * queue.length);
+  current = queue.splice(index, 1)[0]; // ⬅️ REMOVE FROM QUEUE
+
   input.value = "";
   document.getElementById("result").innerText = "";
   startTimer();
@@ -229,10 +237,12 @@ function pick() {
 function startTimer() {
   clearInterval(timer);
   timeLeft = 8;
-  document.getElementById("timer").innerText = ` ⏱ ${timeLeft}s`;
+  document.getElementById("timer").innerText = `⏱ ${timeLeft}s`;
+
   timer = setInterval(() => {
     timeLeft--;
-    document.getElementById("timer").innerText = ` ⏱ ${timeLeft}s`;
+    document.getElementById("timer").innerText = `⏱ ${timeLeft}s`;
+
     if (timeLeft === 0) {
       clearInterval(timer);
       markWrong();
@@ -243,6 +253,7 @@ function startTimer() {
 /* ---------- CHECK ---------- */
 function check() {
   clearInterval(timer);
+
   const user = input.value.trim().toLowerCase();
   if (user === current.toLowerCase()) {
     correct++;
@@ -251,17 +262,21 @@ function check() {
     markWrong();
     return;
   }
+
   updateStats();
   setTimeout(pick, 1200);
 }
 
-/* ---------- WRONG HANDLING ---------- */
+/* ---------- WRONG ---------- */
 function markWrong() {
   wrong++;
-  queue.push(current); // repeat wrong word
+
+  queue.push(current); // ⬅️ add back ONCE
   saveWrongWord(current);
+
   document.getElementById("result").innerText =
     "❌ Wrong → " + current;
+
   updateStats();
   setTimeout(pick, 1500);
 }
@@ -283,10 +298,14 @@ function saveWrongWord(word) {
 
 /* ---------- VOICE ---------- */
 let voices = [];
+
 speechSynthesis.onvoiceschanged = () => {
   voices = speechSynthesis.getVoices()
     .filter(v => v.lang.startsWith("en"));
+
   const select = document.getElementById("voiceSelect");
+  select.innerHTML = "";
+
   voices.forEach((v, i) => {
     const opt = document.createElement("option");
     opt.value = i;
@@ -297,12 +316,14 @@ speechSynthesis.onvoiceschanged = () => {
 
 function speak() {
   if (!current) return;
+
   const u = new SpeechSynthesisUtterance(current);
   const v = voices[document.getElementById("voiceSelect").value];
   if (v) u.voice = v;
+
+  speechSynthesis.cancel();
   speechSynthesis.speak(u);
 }
 </script>
-
 </body>
 </html>

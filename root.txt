@@ -1,0 +1,407 @@
+---
+markmap:
+  maxWidth: 300
+  embedAssets: true
+  initialExpandLevel: 1
+  htmlParser:
+    selector: h1,h2,h3,ul,ol,li,table,pre
+  activeNode:
+    placement: center
+---
+
+# IELTS IDEA BANK (26+)
+
+## 1. PUBLIC TRANSPORT & URBAN MOBILITY
+### Advantages
+- Public transport
+  - easing congestion
+    - by reducing car use
+- Public transport
+  - travel at a lower cost
+- Better transport systems
+  - urban sustainability
+    - via density
+### Disadvantages
+- Poor planning
+  - commuting inefficiencies
+    - through inefficiencies
+- Overcrowding
+  - passenger comfort
+    - during peak hours
+- High investment costs
+  - public budgets
+    - by budget strain
+
+## 2. URBAN COMMERCIAL DEVELOPMENT
+### Advantages
+- Shopping malls
+  - economic development
+    - by generating employment
+- Shopping malls
+  - access diverse products
+    - at competitive prices
+- Large retail centres
+  - job creation
+    - in service industries
+### Disadvantages
+- Large malls
+  - local businesses
+    - via price competition
+- Commercial concentration
+  - community identity
+    - by replacing local shops
+- Excessive consumption
+  - sustainable living
+    - by driving overconsumption
+
+## 3. ARCHITECTURE & BUILT ENVIRONMENT
+### Advantages
+- Building design
+  - quality of life
+    - by enhancing functionality
+- Well-planned spaces
+  - live comfortably
+    - through efficient layouts
+- Modern architecture
+  - efficient land use
+    - via compact design
+### Disadvantages
+- Poor design
+  - mental well-being
+    - through visual stress
+- High-density buildings
+  - living space
+    - by overcrowding
+- Inappropriate construction
+  - cultural heritage
+    - by damaging heritage
+
+## 4. CITY LIFE VS RURAL LIFE
+### Advantages
+- Urban life
+  - economic opportunity
+    - by offering diverse and stable employment
+- Urban areas
+  - essential services
+    - such as healthcare and education
+- Cities
+  - career development
+    - through professional networking and training
+### Disadvantages
+- Urban pressure
+  - personal life
+    - due to fast-paced lifestyles
+- Living costs
+  - financial stability
+    - through high housing costs
+- Urban living
+  - work-life balance
+    - because of long working hours
+
+## 5. CLIMATE CHANGE – RESPONSIBILITY
+### Advantages
+- Government action
+  - tackling climate change
+    - through regulation
+- International cooperation
+  - effective solutions
+    - by sharing resources
+- Global policies
+  - reduce emissions
+    - through clear targets
+### Disadvantages
+- Climate change
+  - natural ecosystems
+    - through extreme weather
+- Environmental damage
+  - vulnerable populations
+    - by threatening livelihoods
+- Lack of cooperation
+  - global stability
+    - due to rising conflict
+
+## 6. CLIMATE CHANGE – SOLUTIONS & PRIORITIES
+### Advantages
+- Climate research
+  - environmental protection
+    - by guiding action
+- Sustainable strategies
+  - long-term development
+    - through careful planning
+- Scientific study
+  - plan effectively
+    - using reliable data
+### Disadvantages
+- Poor implementation
+  - public trust
+    - through weak results
+- Delayed action
+  - future generations
+    - by limiting options
+- Short-term thinking
+  - environmental sustainability
+    - due to quick gains
+
+## 7. TECHNOLOGY & DAILY LIFE
+### Advantages
+- Technology
+  - living standards
+    - by increasing efficiency
+- Digital tools
+  - access information
+    - by removing barriers
+- Innovation
+  - social development
+    - by reshaping communication
+### Disadvantages
+- Overuse of technology
+  - social interaction
+    - by reducing face-to-face contact
+- Excessive screen time
+  - mental health
+    - by increasing stress
+- Data misuse
+  - personal privacy
+    - by exposing personal details
+
+## 8. AI & LANGUAGE LEARNING
+### Advantages
+- Translation technology
+  - global communication
+    - by reducing language barriers
+- AI tools
+  - understand foreign content
+    - by improving accessibility
+- Technology
+  - faster communication
+    - by enabling real-time translation
+### Disadvantages
+- Over-reliance on AI
+  - language learning motivation
+    - by reducing active engagement
+- Reduced practice
+  - language proficiency
+    - by slowing skill development
+- AI dependence
+  - cultural understanding
+    - by oversimplifying meaning
+
+## 9. MASS MEDIA & PUBLIC OPINION
+### Advantages
+- Mass media
+  - public awareness
+    - by setting common agendas
+- Media platforms
+  - access information
+    - through wide exposure
+- News coverage
+  - social discussion
+    - by raising shared concerns
+### Disadvantages
+- Biased content
+  - public opinion
+    - by distorting facts
+- Media pressure
+  - young people’s mental health
+    - through constant comparison
+- Sensational news
+  - social values
+    - by promoting extremes
+
+## 10. TELEVISION – FUNCTIONS
+### Advantages
+- Television
+  - entertainment and information
+    - by combining visuals and sound
+- TV programs
+  - relax
+    - through passive viewing
+- Educational shows
+  - informal learning
+    - by simplifying knowledge
+### Disadvantages
+- Excessive viewing
+  - healthy routines
+    - by reducing activity
+- Screen addiction
+  - physical health
+    - through sedentary habits
+- Poor-quality content
+  - children’s development
+    - by shaping behavior early
+
+## 11. WORK–LIFE BALANCE
+### Advantages
+- Work-life balance
+  - mental well-being
+    - by lowering stress levels
+- Balanced schedules
+  - spend time with family
+    - through time control
+- A healthy balance
+  - long-term productivity
+    - by preventing burnout
+### Disadvantages
+- Long working hours
+  - personal life
+    - by limiting free time
+- Job stress
+  - physical health
+    - through constant pressure
+- Imbalance
+  - family relationships
+    - by weakening connections
+
+## 12. WORK HOURS & LABOUR STRUCTURE
+### Advantages
+- Shorter working hours
+  - reducing stress
+    - by easing workload
+- Flexible schedules
+  - rest more
+    - through time autonomy
+- Reduced hours
+  - better productivity
+    - by improving focus
+### Disadvantages
+- Fewer hours
+  - income stability
+    - by limiting earnings
+- Reduced output
+  - business performance
+    - through lower efficiency
+- Poor regulation
+  - economic growth
+    - by creating imbalance
+
+## 13. WORKPLACE GOVERNANCE & INCOME
+### Advantages
+- Employee involvement
+  - job satisfaction
+    - by increasing ownership
+- Fair wages
+  - feel motivated
+    - through reward fairness
+- Inclusive policies
+  - workplace equality
+    - by reducing bias
+### Disadvantages
+- Poor decision-making
+  - efficiency
+    - by delaying action
+- Wage limits
+  - work motivation
+    - through effort mismatch
+- Unfair systems
+  - organizational stability
+    - by causing conflict
+
+## 14. EDUCATION – ASSESSMENT & RULES
+### Advantages
+- Exams
+  - academic evaluation
+    - by measuring progress
+- Clear rules
+  - improve discipline
+    - through structure
+- Assessment systems
+  - fairness in education
+    - by applying standards
+### Disadvantages
+- Exam pressure
+  - mental health
+    - by increasing anxiety
+- Strict deadlines
+  - learning motivation
+    - through constant stress
+- Over-assessment
+  - creativity
+    - by limiting flexibility
+
+## 15. EDUCATION – LEARNING CONDITIONS
+### Advantages
+- A stable learning environment
+  - academic success
+    - by supporting focus
+- Peaceful conditions
+  - concentrate
+    - through reduced noise
+- Proper conditions
+  - effective study
+    - by improving comfort
+### Disadvantages
+- Part-time work
+  - study time
+    - by splitting attention
+- Fatigue
+  - learning performance
+    - through low energy
+- Distractions
+  - academic focus
+    - by interrupting concentration
+
+## 16. EDUCATION – PEDAGOGY & CURRICULUM
+### Advantages
+- Practical learning
+  - skill development
+    - by linking theory to practice
+- Compulsory subjects
+  - build foundations
+    - through core knowledge
+- Structured curricula
+  - consistent learning
+    - by guiding progress
+### Disadvantages
+- Poor teaching methods
+  - learning outcomes
+    - by reducing clarity
+- Rigid curricula
+  - student interest
+    - through limited choice
+- Limited choice
+  - learning motivation
+    - by lowering engagement
+
+## 17. CLASSICAL LITERATURE & CULTURAL EDUCATION
+### Advantages
+- Classical works
+  - cultural heritage
+    - by passing down values
+- Literary study
+  - critical thinking
+    - through analysis
+- Historical texts
+  - moral awareness
+    - by reflecting past lessons
+### Disadvantages
+- Archaic language
+  - student engagement
+    - by reducing accessibility
+- Outdated content
+  - practical relevance
+    - through weak connection
+- Rigid teaching
+  - creativity
+    - by limiting interpretation
+
+## 18. GLOBAL MOBILITY, TOURISM & EXCHANGE
+### Advantages
+- International travel
+  - cultural exchange
+    - by enabling interaction
+- Overseas experience
+  - broaden perspectives
+    - through exposure
+- Tourism
+  - economic development
+    - by supporting local income
+### Disadvantages
+- High costs
+  - personal finances
+    - by increasing expenses
+- Mass tourism
+  - local environments
+    - through overcrowding
+- Cultural exposure without control
+  - local identity
+    - by weakening traditions
