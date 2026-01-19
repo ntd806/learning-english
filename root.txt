@@ -98,49 +98,21 @@ markmap:
   - work-life balance
     - because of long working hours
 
-## 5. CLIMATE CHANGE – RESPONSIBILITY
+## 5. CLIMATE CHANGE – RESPONSIBILITY / SOLUTIONS & PRIORITIES
 ### Advantages
 - Government action
   - tackling climate change
-    - through regulation
 - International cooperation
-  - effective solutions
-    - by sharing resources
+   - sustainable development
 - Global policies
-  - reduce emissions
-    - through clear targets
+  - adopt eco-friendly habits
 ### Disadvantages
-- Climate change
+- Lack of effective policies
   - natural ecosystems
-    - through extreme weather
-- Environmental damage
-  - vulnerable populations
-    - by threatening livelihoods
-- Lack of cooperation
+- Industrial pollution
+  - public health
+- Political inaction
   - global stability
-    - due to rising conflict
-
-## 6. CLIMATE CHANGE – SOLUTIONS & PRIORITIES
-### Advantages
-- Climate research
-  - environmental protection
-    - by guiding action
-- Sustainable strategies
-  - long-term development
-    - through careful planning
-- Scientific study
-  - plan effectively
-    - using reliable data
-### Disadvantages
-- Poor implementation
-  - public trust
-    - through weak results
-- Delayed action
-  - future generations
-    - by limiting options
-- Short-term thinking
-  - environmental sustainability
-    - due to quick gains
 
 ## 7. TECHNOLOGY & DAILY LIFE
 ### Advantages
@@ -405,43 +377,25 @@ markmap:
 - Cultural exposure without control
   - local identity
     - by weakening traditions
-EARLY MARRIAGE, EDUCATION & CAREER
-Advantages
 
-Emotional stability
-
-academic performance
-
-by reducing psychological pressure
-
-Shared responsibilities
-
-study management
-
-through mutual support
-
-Early financial awareness
-
-career development
-
-by encouraging disciplined planning
-
-Disadvantages
-
-Family obligations
-
-educational progress
-
-by diverting attention from academic commitments
-
-Financial pressure
-
-career growth
-
-through unstable income sources
-
-Role overload
-
-mental well-being
-
-by increasing stress levels
+## EARLY MARRIAGE, EDUCATION & CAREER
+### Advantages
+- Emotional stability
+  - academic performance
+    - by reducing psychological pressure
+- Shared responsibilities
+  - study management
+    - through mutual support
+- Early financial awareness
+  - career development
+    - by encouraging disciplined planning
+### Disadvantages
+- Family obligations
+  - educational progress
+    - by diverting attention from academic commitments
+- Financial pressure
+  - career growth
+    - through unstable income sources
+- Role overload
+  - mental well-being
+    - by increasing stress levels

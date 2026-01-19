@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Spelling Practice Pro</title>
+
 <style>
 /* ===== RESET ===== */
 * {
@@ -57,9 +58,9 @@ body {
 }
 
 /* ===== TITLE ===== */
-h2 {
+h2, h3 {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   font-size: 24px;
   font-weight: 700;
 }
@@ -143,21 +144,20 @@ button:active {
   font-size: 14px;
   color: #374151;
 }
-
-/* ===== MARKMAP (KEEP IF USED) ===== */
-#mindmap {
-  width: 100vw;
-  height: calc(100vh - 48px);
+.correct-char {
+  color: #16a34a;
+  font-weight: 700;
 }
-
-.markmap-dark {
-  background: #18181b;
-  color: white;
+.wrong-char {
+  color: #dc2626;
+  font-weight: 700;
+  text-decoration: underline;
 }
 </style>
-
 </head>
+
 <body>
+
 <div class="menu">
   <a href="./framework.html" class="active">Framework</a>
   <a href="./constract.html">Constract</a>
@@ -166,164 +166,32 @@ button:active {
 </div>
 
 <div class="main">
-<h2>Spelling Practice Pro</h2>
+  <h2>Spelling Practice Pro</h2>
 
-<input type="file" id="fileInput" accept=".txt"><br><br>
+  <!-- TOGGLE VOCAB -->
+  <label style="text-align:center; margin-bottom:10px;">
+    <input type="checkbox" id="toggleVocab" checked>
+    Show vocabulary
+  </label>
 
-<label>Voice:</label>
-<select id="voiceSelect"></select><br><br>
-<div class="actions">
-<button onclick="speak()">🔊 Listen</button>
-<span id="timer"></span><br><br>
-<div class="actions">
+  <h3 id="vocabunary"></h3>
 
-<input id="userInput" placeholder="Type what you hear">
-<button onclick="check()">Check</button>
+  <input type="file" id="fileInput" accept=".txt"><br><br>
 
-<div id="result"></div>
-<div id="stats"></div>
+  <label>Voice:</label>
+  <select id="voiceSelect"></select><br><br>
+
+  <div class="actions">
+    <button onclick="speak()">🔊 Listen</button>
+    <span id="timer"></span>
+  </div>
+
+  <input id="userInput" placeholder="Type what you hear">
+  <button onclick="check()">Check</button>
+
+  <div id="result"></div>
+  <div id="stats"></div>
 </div>
-
-<script>
-let list = [];
-let queue = [];
-let current = "";
-let timer;
-let timeLeft = 8;
-
-let correct = 0;
-let wrong = 0;
-
-const input = document.getElementById("userInput");
-input.addEventListener("keydown", e => {
-  if (e.key === "Enter") check();
-});
-
-/* ---------- LOAD FILE ---------- */
-document.getElementById("fileInput").addEventListener("change", e => {
-  const reader = new FileReader();
-  reader.onload = () => {
-    list = reader.result
-      .split("\n")
-      .map(x => x.trim())
-      .filter(x => x);
-
-    queue = [...list];
-    correct = 0;
-    wrong = 0;
-    updateStats();
-    pick();
-  };
-  reader.readAsText(e.target.files[0]);
-});
-
-/* ---------- PICK WORD (FIXED) ---------- */
-function pick() {
-  if (queue.length === 0) {
-    alert("Finished!");
-    return;
-  }
-
-  const index = Math.floor(Math.random() * queue.length);
-  current = queue.splice(index, 1)[0]; // ⬅️ REMOVE FROM QUEUE
-
-  input.value = "";
-  document.getElementById("result").innerText = "";
-  startTimer();
-  speak();
-}
-
-/* ---------- TIMER ---------- */
-function startTimer() {
-  clearInterval(timer);
-  timeLeft = 8;
-  document.getElementById("timer").innerText = `⏱ ${timeLeft}s`;
-
-  timer = setInterval(() => {
-    timeLeft--;
-    document.getElementById("timer").innerText = `⏱ ${timeLeft}s`;
-
-    if (timeLeft === 0) {
-      clearInterval(timer);
-      markWrong();
-    }
-  }, 1000);
-}
-
-/* ---------- CHECK ---------- */
-function check() {
-  clearInterval(timer);
-
-  const user = input.value.trim().toLowerCase();
-  if (user === current.toLowerCase()) {
-    correct++;
-    document.getElementById("result").innerText = "✅ Correct";
-  } else {
-    markWrong();
-    return;
-  }
-
-  updateStats();
-  setTimeout(pick, 1200);
-}
-
-/* ---------- WRONG ---------- */
-function markWrong() {
-  wrong++;
-
-  queue.push(current); // ⬅️ add back ONCE
-  saveWrongWord(current);
-
-  document.getElementById("result").innerText =
-    "❌ Wrong → " + current;
-
-  updateStats();
-  setTimeout(pick, 1500);
-}
-
-/* ---------- STATS ---------- */
-function updateStats() {
-  document.getElementById("stats").innerText =
-    `Correct: ${correct} | Wrong: ${wrong}`;
-}
-
-/* ---------- SAVE WRONG WORD ---------- */
-function saveWrongWord(word) {
-  let saved = JSON.parse(localStorage.getItem("wrongWords") || "[]");
-  if (!saved.includes(word)) {
-    saved.push(word);
-    localStorage.setItem("wrongWords", JSON.stringify(saved));
-  }
-}
-
-/* ---------- VOICE ---------- */
-let voices = [];
-
-speechSynthesis.onvoiceschanged = () => {
-  voices = speechSynthesis.getVoices()
-    .filter(v => v.lang.startsWith("en"));
-
-  const select = document.getElementById("voiceSelect");
-  select.innerHTML = "";
-
-  voices.forEach((v, i) => {
-    const opt = document.createElement("option");
-    opt.value = i;
-    opt.text = `${v.lang} - ${v.name}`;
-    select.add(opt);
-  });
-};
-
-function speak() {
-  if (!current) return;
-
-  const u = new SpeechSynthesisUtterance(current);
-  const v = voices[document.getElementById("voiceSelect").value];
-  if (v) u.voice = v;
-
-  speechSynthesis.cancel();
-  speechSynthesis.speak(u);
-}
-</script>
+<script src="./spelling.js"></script>
 </body>
 </html>
